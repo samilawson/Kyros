@@ -9,10 +9,7 @@ const Canvas = require("Canvas");
 const path = require("path");
 const https = require("https");
 const getProp = require("dotprop");
-const lastfmapi = require("lastfmapi");
-const lfm = new lastfmapi({
-  api_key: "1336029958418997879ebb165f5fbb3f"
-});
+
 module.exports = class FmImageCommand extends Command {
   constructor(client) {
     super(client, {
