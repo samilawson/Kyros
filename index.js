@@ -34,7 +34,7 @@ fs.readdir(`${__dirname}/events/`, (err, files) => {
     console.log('Logged in!');
     client.user.setActivity('//help | //invite');
 });
-
+    client.on('error', console.error);
 
     client.login(process.env.BOT_TOKEN);
 
