@@ -16,7 +16,7 @@ module.exports = class ChartCommand extends Command {
       examples: ['chart username'],
       args: [
         {
-          key: 'time period',
+          key: 'period',
           prompt: 'What time period would you like to display? (Defaults to 7 days)',
           type: 'string',
           default: '7day',
@@ -37,10 +37,12 @@ module.exports = class ChartCommand extends Command {
     }else{
       
     var file = fs.createWriteStream("file.jpg");
-    var request = await http.get(`http://www.tapmusic.net/collage.php?user=${unames[msg.author.id].username}&type=${args}&size=5x5&caption=true`, function(response) {
+    var request = await http.get(`http://www.tapmusic.net/collage.php?user=${unames[msg.author.id].username}&type=${args.period}&size=5x5&caption=true`, function(response) {
    response.pipe(file);
   setTimeout(function(){msg.say('', {file: 'file.jpg'})}, 3000);
+
 });
+
   }
 }
 };
