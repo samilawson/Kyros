@@ -17,15 +17,15 @@ module.exports = class RegisterCommand extends Command {
   async run(msg, args) {
     const unames = JSON.parse(fs.readFileSync("./data/unames.json", "utf8"));
     let toId = msg.author.id;
-        if(!unames[toId]){
-            unames[msg.author.id] = {
+        //if(!unames[toId]){
+            unames[msg.author.id].username = args
                 username: args
-            }
+            
           
         fs.writeFile("./data/unames.json", JSON.stringify(unames), (err) => {
             if (err) console.error(err)
           });
           msg.channel.send('Registered!');
         }
-  }
+  
 };
