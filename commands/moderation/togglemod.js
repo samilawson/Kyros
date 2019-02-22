@@ -63,6 +63,7 @@ module.exports = class ToggleCommand extends Command {
           fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
           const channel = msg.guild.channels.find('name', 'mod-log');
           channel.delete().catch(err => {
+            console.log(err)
             msg.reply(':no_entry_sign: **Error:** I couldn\'t delete the #mod-log channel. Make sure I have perms!');
           });
           msg.reply(':white_check_mark: The modlog is now **disabled**.');

@@ -4,7 +4,7 @@ const moment = require("moment");
 require("moment-duration-format");
 var request = require('superagent');
 var parseString = require('xml2js').parseString;
-var xml2js = require('xml2js');
+//var xml2js = require('xml2js');
 
 module.exports = class TriggeredCommand extends Command {
     constructor(client) {
@@ -57,7 +57,7 @@ module.exports = class TriggeredCommand extends Command {
   })
         .catch((err) => {
         if(err){
-          msg.say("\:x: " +  "`" + "Error: Invalid Nation" + "`"); //checks to see if the nation exists
+          msg.say(":x: " +  "`" + "Error: Invalid Nation" + "`"); //checks to see if the nation exists
         }
       })
 }
