@@ -1,2 +1,15 @@
 language: node_js
-before_install: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev build-essential autoconf -y
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libcairo2-dev
+      - libjpeg8-dev
+      - libpango1.0-dev
+      - libgif-dev
+      - librsvg2-dev
+      - g++-4.9
+env:
+  - CXX=g++-4.9
+sudo: false
