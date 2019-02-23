@@ -1,17 +1,15 @@
-const { Command } = require('discord.js-commando');
-const { RichEmbed } = require('discord.js');
+const { Command } = require("discord.js-commando");
 
 module.exports = class SupportCommand extends Command {
   constructor(client) {
     super(client, {
-      name: 'support',
-      group: 'util',
-      memberName: 'support',
-      description: 'Sends an invite to LazyBot HQ!',
-      
-      examples: ['support']
-      
-    })
+      name: "support",
+      group: "util",
+      memberName: "support",
+      description: "Sends an invite to LazyBot HQ!",
+
+      examples: ["support"]
+    });
   }
 
   async run(msg) {
