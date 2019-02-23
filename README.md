@@ -2,7 +2,6 @@
 
 ![GitHub release](https://img.shields.io/github/release/samilawson/kyros.svg)
 [![Build Status](https://travis-ci.org/samilawson/kyros.png?branch=master)](https://travis-ci.org/samilawson/kyros)
-![CircleCI (all branches)](https://img.shields.io/circleci/project/github/samilawson/Kyros.svg)
 [![codefactor](https://www.codefactor.io/repository/github/samilawson/kyros/badge?style=flat-square)](https://www.codefactor.io/repository/github/samilawson/kyros/overview/master)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/samilawson/kyros.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/samilawson/kyros.svg)

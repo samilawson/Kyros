@@ -11,7 +11,7 @@ addons:
       - libpango1.0-dev
       - libgif-dev
       - librsvg2-dev
-      - g++-4.9
+      - g++-4.8
 env:
-  - CXX=g++-4.9
+  - CXX=g++-4.8
 sudo: false
