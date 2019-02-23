@@ -8,7 +8,7 @@ module.exports = class FMTopArtistsCommand extends Command {
             name: 'fmtopartists',
             group: 'util',
             memberName: 'fmtopartists',
-            description: 'Shows the top artists ever on Last.fm',
+            description: 'Shows the current top artists on Last.fm',
 
             examples: ['fmtopartists']
         })
