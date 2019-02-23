@@ -45,5 +45,5 @@ module.exports = class RoleAddCommand extends Command {
         }
       }
     }
-  }
+  
 };
