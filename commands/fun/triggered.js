@@ -1,4 +1,5 @@
 const { Command } = require("discord.js-commando");
+const Discord = require('discord.js')
 const Canvas = require("Canvas");
 const snekfetch = require("snekfetch");
 const { promisifyAll } = require("tsubaki");
@@ -50,11 +51,13 @@ module.exports = class TriggeredCommand extends Command {
       const { body } = await snekfetch.get(avatarURL);
       avatar.src = body;
       generate();
-      var buf = canvas.toBuffer();
-      var toSend = fs.writeFileSync("test.png", buf);
+      const attachment = new Discord.Attachment(canvas.toBuffer(), "test.png")
+      msg.channel.send(attachment)
+      /*var buf = canvas.toBuffer();
+      var toSend = fs.writeFileSync("../../assets/images/test.png", buf);
       return msg
-        .say("", { file: "test.png" })
-        .catch(err => msg.say(`${err.name}: ${err.message}`));
+        .say("", { file: "../../assets/images/test.png" })
+        .catch(err => msg.say(`${err.name}: ${err.message}`));*/
     } catch (err) {
       return msg.say(`${err.name}: ${err.message}`);
     }

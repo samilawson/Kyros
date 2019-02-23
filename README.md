@@ -10,3 +10,15 @@
 ![GitHub forks](https://img.shields.io/github/forks/samilawson/kyros.svg?label=fork&style=social)
 ![GitHub stars](https://img.shields.io/github/stars/samilawson/kyros.svg?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/slawsonfc.svg?style=social)
+
+A general purpose discord bot with last.fm and nationstates.net support.
+
+
+## Features
+A variety of commands to show your music stats on last.fm
+Nationstates.net nation, region, and world info commands
+Server moderation commands
+A roleme system
+Fun image manipulation commands
+and much more...
+
