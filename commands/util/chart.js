@@ -36,7 +36,7 @@ module.exports = class ChartCommand extends Command {
         msg.channel.send(`@${msg.author.id}, you don't seem to have your username set! Type !register *username* to set it!`);
     }else{
       
-    var file = fs.createWriteStream("file.jpg");
+    var file = fs.createWriteStream("./assets/images/file.jpg");
     var request = await http.get(`http://www.tapmusic.net/collage.php?user=${unames[msg.author.id].username}&type=${args.period}&size=5x5&caption=true`, function(response) {
    response.pipe(file);
   setTimeout(function(){msg.say('', {file: 'file.jpg'})}, 3000);

@@ -1,4 +1,5 @@
 const { Command } = require('discord.js-commando');
+const Discord = require('discord.js')
 const Canvas = require('Canvas');
 const snekfetch = require('snekfetch');
 const { promisifyAll } = require('tsubaki');
@@ -51,10 +52,9 @@ module.exports = class RIPCommand extends Command {
             const avatarImg = await snekfetch.get(avatarURL);
             avatar.src = avatarImg.body;
             generate();
-            var buf = canvas.toBuffer()
-            var toSend = fs.writeFileSync("rip.png", buf);
-            return msg.say('',{file: 'rip.png'})
-                .catch(err => msg.say(`${err.name}: ${err.message}`));
+            
+            const attachment = new Discord.Attachment(canvas.toBuffer(), "rip.png")
+            msg.channel.send(attachment)
         } catch (err) {
             return msg.say(`${err.name}: ${err.message}`);
         }

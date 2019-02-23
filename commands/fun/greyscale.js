@@ -1,4 +1,5 @@
 const { Command } = require('discord.js-commando');
+const Discord = require('Discord.js')
 const Canvas = require('Canvas');
 const snekfetch = require('snekfetch');
 const { promisifyAll } = require('tsubaki');
@@ -48,10 +49,9 @@ module.exports = class GreyscaleCommand extends Command {
             const avatarImg = await snekfetch.get(avatarURL);
             avatar.src = avatarImg.body;
             generate();
-            var buf = canvas.toBuffer()
-            var toSend = fs.writeFileSync("greyscale.png", buf);
-            return msg.say('', {file: 'greyscale.png'})
-                .catch(err => msg.say(`${err.name}: ${err.message}`));
+           
+            const attachment = new Discord.Attachment(canvas.toBuffer(), "greyscale.png")
+            msg.channel.send(attachment)
         } catch (err) {
             return msg.say(`${err.name}: ${err.message}`);
         }

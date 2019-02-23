@@ -134,7 +134,7 @@ module.exports = class WeatherCommand extends Command {
 		precip.src = await fs.readFileAsync(path.join(__dirname, '..', '..', 'assets', 'weather', 'icons', theme, 'precip.png')); // eslint-disable-line max-len
 		generate();
 		var buf = canvas.toBuffer();
-		var toSend = fs.writeFileSync("weather.png", buf);
+		var toSend = fs.writeFileSync("./assets/images/weather.png", buf);
 		return msg.say('', { file: 'weather.png'});
 	}
 
