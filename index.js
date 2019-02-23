@@ -15,7 +15,8 @@ client.registry
         ['ns', 'NationStates'],
         ['fun', 'Fun'],
         ['util', 'Utilities'],
-        ['moderation', 'Moderation']
+        ['moderation', 'Moderation'],
+        ['roleme', "RoleMe"]
     ])
     .registerDefaultGroups()
     .registerDefaultCommands()
