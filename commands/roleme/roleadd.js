@@ -35,14 +35,11 @@ module.exports = class RoleAddCommand extends Command {
     } else {
       let duplicate = false;
       let toCheck = data[msg.guild.id].roles;
-      for (let i = 0; i < toCheck.length; i++) {
-        if (toCheck.role[i] == role) {
-          duplicate = true;
-          break;
+      if(toCheck.includes(role)){
+        duplicate = true;
+        msg.channel.send("Role is already added!")
         }
-        if (duplicate == true) {
-          msg.channel.send("Role is already added!");
-        } else {
+        else {
           data[msg.guild.id].roles.push({ role: role });
           fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
         }
