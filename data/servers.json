@@ -109,5 +109,13 @@
     "leaveMessage": "also gay",
     "modlog": "enabled",
     "noinvite": "enabled"
+  },
+  "543961974090891275": {
+    "joinMessage": "hi",
+    "roles": [
+      {
+        "role": "updates"
+      }
+    ]
   }
 }

@@ -21,17 +21,17 @@ module.exports = class RoleMeCommand extends Command {
       ]
     });
   }
-  async run(msg, { args }) {
+  async run(msg, { role }) {
     const data = JSON.parse(fs.readFileSync(jsonPath), "utf8");
     if (!data[msg.guild.id].roles) {
       msg.channel.send("No roles are added to the roleme list!");
     } else {
-      if (!data[msg.guild.id].roles.includes(role)) {
+      if (!data[msg.guild.id].roles.includes(role.name)) {
         msg.channel.send("Role not found!");
       } else {
         let member = await msg.guild.members.fetch(msg.author);
         member.addRole(role).catch(console.error);
-        msg.reply(":white_check_mark: Role " + role + " added!");
+        msg.reply(":white_check_mark: Role " + role.name + " added!");
       }
     }
   }

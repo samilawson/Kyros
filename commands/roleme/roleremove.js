@@ -33,10 +33,10 @@ module.exports = class RoleRemoveCommand extends Command {
     if (!data[msg.guild.id].roles) {
       msg.channel.send(":no_entry_sign: No roles found on the roleme list!");
     }
-    if (!data[msg.guild.id].roles.includes(role)) {
+    if (!data[msg.guild.id].roles.includes(role.name)) {
       msg.channel.send(":no_entry_sign: Role not found in the roleme list!");
     } else {
-      data[msg.guild.id].roles.remove(role);
+      data[msg.guild.id].roles.remove(role.name);
       msg.channel.send(":white_check_mark: Role removed!");
     }
   }

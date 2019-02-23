@@ -1,7 +1,7 @@
 const { Command } = require("discord.js-commando");
 const fs = require("fs");
 const path = require("path");
-const jsonPath = path.join(__dirname + "../../data/servers.json");
+const jsonPath = path.join(__dirname + "../../../data/servers.json");
 
 module.exports = class RoleListCommand extends Command {
   constructor(client) {
@@ -21,8 +21,11 @@ module.exports = class RoleListCommand extends Command {
         ":no_entry_sign: There are no roles added to the roleme list!"
       );
     } else {
-      let roles = data[msg.guild.id].roles.map(r => r).join(" ");
-      msg.channel.send(`Available roles for ${msg.guild.name}: ${roles}`);
+        let toSend;
+      let roles = data[msg.guild.id].roles.forEach(function(element){
+            toSend = element.toString() + " "
+      })
+      msg.channel.send(`Available roles for ${msg.guild.name}: ${toSend}`);
     }
   }
 };

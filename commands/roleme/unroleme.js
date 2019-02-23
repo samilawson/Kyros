@@ -26,12 +26,12 @@ module.exports = class UnRoleMeCommand extends Command {
     if (!data[msg.guild.id].roles) {
       msg.channel.send(":no_entry_sign: No roles found in the roleme list!");
     } else {
-      if (!data[msg.guild.id].roles.includes(role)) {
+      if (!data[msg.guild.id].roles.includes(role.name)) {
         msg.channel.send(":no_entry_sign: Role not found!");
       } else {
         let member = await msg.guild.members.fetch(msg.author);
         member.removeRole(role).catch(console.error);
-        msg.reply(":white_check_mark: Role " + role + " removed!");
+        msg.reply(":white_check_mark: Role " + role.name + " removed!");
       }
     }
   }

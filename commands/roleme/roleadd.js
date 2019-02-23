@@ -30,18 +30,21 @@ module.exports = class RoleAddCommand extends Command {
         ":no_entry_sign: [**Invalid Permissions**]: You don't have the **Administrator** permission!"
       );
     if (!data[msg.guild.id].roles) {
-      data[msg.guild.id].roles.push({ role: role });
+      data[msg.guild.id].roles = []
+      data[msg.guild.id].roles.push({ role: role.name });
       fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
+      msg.channel.send("Role added!")
     } else {
       let duplicate = false;
       let toCheck = data[msg.guild.id].roles;
-      if(toCheck.includes(role)){
+      if(toCheck.includes(role.name)){
         duplicate = true;
         msg.channel.send("Role is already added!")
         }
         else {
-          data[msg.guild.id].roles.push({ role: role });
+          data[msg.guild.id].roles.push({ role: role.name });
           fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
+          msg.channel.send("Role added!")
         }
       }
     }
