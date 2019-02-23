@@ -54,7 +54,7 @@ module.exports = class ChartCommand extends Command {
         function(response) {
           response.pipe(file);
           setTimeout(function() {
-            msg.say("", { file: "file.jpg" });
+            msg.say("", { file: "./assets/images/file.jpg" });
           }, 3000);
         }
       );

@@ -103,5 +103,11 @@
   },
   "446057416505688074": {
     "joinMessage": "momgay"
+  },
+  "534106473949560842": {
+    "joinMessage": "gay",
+    "leaveMessage": "also gay",
+    "modlog": "enabled",
+    "noinvite": "enabled"
   }
 }
