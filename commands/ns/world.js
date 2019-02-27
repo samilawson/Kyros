@@ -4,7 +4,6 @@ const moment = require("moment");
 require("moment-duration-format");
 var request = require("superagent");
 var parseString = require("xml2js").parseString;
-var xml2js = require("xml2js");
 
 module.exports = class WorldCommand extends Command {
   constructor(client) {
