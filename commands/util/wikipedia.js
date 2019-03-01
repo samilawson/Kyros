@@ -1,5 +1,4 @@
 const { Command } = require("discord.js-commando");
-const { RichEmbed } = require("discord.js");
 const request = require("superagent");
 module.exports = class WikipediaCommand extends Command {
   constructor(client) {
