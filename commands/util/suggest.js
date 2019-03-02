@@ -1,5 +1,4 @@
 const { Command } = require("discord.js-commando");
-const { RichEmbed } = require("discord.js");
 const superagent = require("superagent");
 module.exports = class SuggestCommand extends Command {
   constructor(client) {
