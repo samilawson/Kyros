@@ -1,5 +1,4 @@
 const { Command } = require("discord.js-commando");
-const { RichEmbed } = require("discord.js");
 const fs = require("fs");
 module.exports = class RegisterCommand extends Command {
   constructor(client) {
